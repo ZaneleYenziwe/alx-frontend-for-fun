@@ -1,0 +1,110 @@
+/* General styles */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  margin: 0;
+}
+
+.menu {
+  position: relative;
+}
+
+.menu-open {
+  display: none;
+}
+
+.menu-open-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease;
+  z-index: 1;
+}
+
+.menu-line {
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  transition: transform 0.2s ease;
+}
+
+.menu-line-1 {
+  transform: translateY(-6px);
+}
+
+.menu-line-2 {
+  transform: translateY(0);
+}
+
+.menu-line-3 {
+  transform: translateY(6px);
+}
+
+.menu-item {
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  transform: scale(0);
+  transition: transform 0.5s ease;
+}
+
+.menu-open:checked + .menu-open-button {
+  transform: rotate(45deg);
+}
+
+.menu-open:checked + .menu-open-button .menu-line-1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-open:checked + .menu-open-button .menu-line-2 {
+  opacity: 0;
+}
+
+.menu-open:checked + .menu-open-button .menu-line-3 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.menu-open:checked ~ .menu-item {
+  transform: scale(1);
+}
+
+.menu-item:nth-child(3) {
+  transition-delay: 0.1s;
+}
+
+.menu-item:nth-child(4) {
+  transition-delay: 0.2s;
+}
+
+.menu-item:nth-child(5) {
+  transition-delay: 0.3s;
+}
+
+.menu-item:nth-child(6) {
+  transition-delay: 0.4s;
+}
+
+.menu-item:nth-child(7) {
+  transition-delay: 0.5s;
+}
+
